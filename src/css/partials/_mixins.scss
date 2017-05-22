@@ -1,0 +1,76 @@
+@mixin vw-font-size($viewport-width, $font-size, $letter-spacing: null) {
+
+  $vw-context: $viewport-width * 0.01;
+
+  @media (max-width: ($viewport-width * 1px)) {
+    font-size: (($font-size / $vw-context) * 1vw);
+
+    @if ($letter-spacing) {
+      letter-spacing: (($letter-spacing / $vw-context) * 1vw);
+    }
+
+  }
+}
+
+
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color;
+  background: rgba($color, $opacity);
+}
+
+
+
+@mixin animate-burger-button {
+  border: none;
+  background: transparent;
+
+  &:hover {
+    background: transparent;
+    .animate-burger {
+      .top {
+       transform: translateY(-3px);
+      }
+      .bottom {
+        transform: translateY(3px);
+      }
+    }
+  }
+  &:not(.collapsed) {
+    .animate-burger {
+      .top {
+        transform: translateY(7px) rotate(-45deg);
+      }
+      .middle {
+        transform: translateX(10px);
+        opacity: 0;
+      }
+      .bottom {
+        transform: translateY(-7px) rotate(45deg);
+      }
+    }
+  }
+  .animate-burger {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 16px;
+    span {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: #1A459C;
+      left: 0;
+      transition: transform .5s, opacity .6s;
+    }
+    .top {
+      top: 0;
+    }
+    .middle {
+      top: 50%;
+      margin-top: -1px;
+    }
+    .bottom {
+      bottom: 0;
+    }
+  }
+}
