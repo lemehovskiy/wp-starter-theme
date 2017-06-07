@@ -28,10 +28,10 @@ gulp.task('styles', function () {
             }))
             .pipe(sourcemaps.init())
             .pipe(sass())
-            .pipe(autoprefixer({
+            .pipe(gulpif(productionMode, autoprefixer({
                 browsers: ['last 5 versions'],
                 cascade: false
-            }))
+            })))
             .pipe(importCss())
             .pipe(rename({suffix: '.min'}))
             .pipe(gulpif(productionMode, minifycss()))

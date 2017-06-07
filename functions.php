@@ -1,7 +1,7 @@
 <?php
 
 function global_scripts() {
-    wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/build/css/style.css', array());
+    wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/build/css/style.min.css', array());
 
     wp_enqueue_script('vendor', get_template_directory_uri() . '/build/js/vendors.min.js');
     wp_enqueue_script('custom', get_template_directory_uri() . '/build/js/custom.min.js', array('vendor'));
