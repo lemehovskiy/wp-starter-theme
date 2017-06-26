@@ -48,6 +48,9 @@ gulp.task('vendorsJs', function() {
         gulp.src('./src/js/vendor/collapse.js')
     )
 
+        .pipe(plumber({
+            errorHandler: notify.onError("Error: <%= error.message %>")
+        }))
         .pipe(concat('vendors.js'))
         .pipe(gulpif(productionMode, uglify()))
         .pipe(rename({ suffix: '.min' }))
@@ -61,6 +64,9 @@ gulp.task('scriptsJs', function() {
         gulp.src('./src/js/custom/custom.js')
     )
 
+        .pipe(plumber({
+            errorHandler: notify.onError("Error: <%= error.message %>")
+        }))
         .pipe(concat('custom.js'))
         .pipe(gulpif(productionMode, uglify()))
         .pipe(rename({ suffix: '.min' }))
