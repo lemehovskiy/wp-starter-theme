@@ -32,9 +32,9 @@ gulp.task('styles', function () {
                 browsers: ['last 5 versions'],
                 cascade: false
             })))
-            .pipe(importCss())
             .pipe(rename({suffix: '.min'}))
             .pipe(gulpif(productionMode, minifycss()))
+            .pipe(sourcemaps.write('/'))
             .pipe(gulp.dest('./build/css'))
             .pipe(notify("Styles task complete"));
     });
@@ -43,7 +43,6 @@ gulp.task('styles', function () {
 
 gulp.task('vendorsJs', function() {
     return streamqueue({ objectMode: true },
-        gulp.src('./src/js/vendor/jquery/*.js'),
         gulp.src('./src/js/vendor/TweenMax.min.js'),
         gulp.src('./src/js/vendor/collapse.js')
     )
