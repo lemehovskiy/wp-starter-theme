@@ -2,15 +2,15 @@ $(function () {
 
     function initMainNavigation() {
 
-        $('.navbar-nav .menu-item-has-children, .dropdown.search, .dropdown.login-wrap').each(function () {
+        $('.navbar-nav .menu-item-has-children, .dropdown.search, .dropdown.login-wrap').forEach(function () {
 
-            var $this = $(this);
+            let $this = $(this);
 
-            var $sub_menu = $this.children('.dropdown-menu');
+            let $sub_menu = $this.children('.dropdown-menu');
 
             // $sub_menu.attr('id', 'accordion');
 
-            var $sub_menu_items = $sub_menu.children('li');
+            let $sub_menu_items = $sub_menu.children('li');
 
 
             $this.on('show.bs.dropdown', function () {
@@ -20,13 +20,13 @@ $(function () {
                 TweenMax.from($sub_menu, 0.5, {autoAlpha: 0});
 
 
-                var delay = 0;
+                let delay = 0;
 
-                var shift = 0.1;
+                let shift = 0.1;
 
-                var tl = new TimelineMax();
+                let tl = new TimelineMax();
 
-                for(var i = 1; i <= $sub_menu_items.length; i++) {
+                for(let i = 1; i <= $sub_menu_items.length; i++) {
 
                     delay = i * 0.2 - shift;
 
@@ -49,10 +49,8 @@ $(function () {
             })
 
         })
-
     }
-
-
+    
     initMainNavigation();
 
 

@@ -10,6 +10,7 @@ var gulp           = require('gulp'),
     sourcemaps     = require('gulp-sourcemaps'),
     gulpif         = require('gulp-if'),
     concat         = require('gulp-concat'),
+    babel          = require('gulp-babel'),
 
 
     productionMode = false;
@@ -59,13 +60,16 @@ gulp.task('vendorsJs', function() {
 
 gulp.task('scriptsJs', function() {
     return streamqueue({ objectMode: true },
-        gulp.src('./src/js/custom/custom.js')
+        gulp.src('./src/js/custom/custom.es6')
     )
 
         .pipe(plumber({
             errorHandler: notify.onError("Error: <%= error.message %>")
         }))
         .pipe(concat('custom.js'))
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(gulpif(productionMode, uglify()))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('./build/js'))
@@ -77,4 +81,5 @@ gulp.task('watch', ['styles', 'vendorsJs', 'scriptsJs'], function() {
     gulp.watch('src/css/**/*.scss', ['styles']);
     gulp.watch('src/js/vendor/*.js', ['vendorJs']);
     gulp.watch('src/js/custom/*.js', ['scriptsJs']);
+    gulp.watch('src/js/custom/*.es6', ['scriptsJs']);
 });
