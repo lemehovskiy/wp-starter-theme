@@ -5,10 +5,14 @@ body {
 a {
   text-decoration: none;
   color: inherit;
-  transition: color .5s, opacity .5s;
+  transition: color .5s, opacity .5s, background .5s;
   &:focus {
     outline: none;
   }
+}
+
+button {
+  transition: color .5s, opacity .5s, background .5s;
 }
 
 .back-img {
@@ -25,5 +29,27 @@ a {
     top: 0;
     right: 0;
     bottom: 0;
+  }
+}
+
+section {
+  overflow: hidden;
+
+  &:not(.full-width) {
+    padding: 0 20px;
+  }
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.row {
+  margin: 0 -10px;
+  display: flex;
+
+  .col {
+    padding: 0 10px;
   }
 }
