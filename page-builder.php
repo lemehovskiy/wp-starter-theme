@@ -3,13 +3,17 @@
 <?php get_header(); ?>
 
 
-<?php if (have_rows('page_builder')):
-    while (have_rows('page_builder')) : the_row();
+    <div class="main-page-wrap">
 
-        get_template_part( 'template-parts/section-' . get_row_layout());
+        <?php if (have_rows('page_builder')):
+            while (have_rows('page_builder')) : the_row();
 
-    endwhile;
-endif; ?>
+                get_template_part( 'template_parts/' . get_row_layout());
+
+            endwhile;
+        endif; ?>
+
+    </div>
 
 
 <?php get_footer(); ?>
