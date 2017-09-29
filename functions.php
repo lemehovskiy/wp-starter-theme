@@ -34,3 +34,7 @@ show_admin_bar(false);
 
 
 add_theme_support('menus');
+
+
+
+require_once( __DIR__ . '/includes/helpers.php');
