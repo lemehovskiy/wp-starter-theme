@@ -1,5 +1,13 @@
 <?php
 
+add_action( 'wp_enqueue_scripts', function(){
+    if (is_admin()) return; // don't dequeue on the backend
+    wp_deregister_script( 'jquery' );
+    wp_register_script( 'jquery',  get_stylesheet_directory_uri() . '/src/js/vendor/jquery-3.2.1.min.js', array(), null, false );
+    wp_enqueue_script( 'jquery');
+});
+
+
 function global_scripts() {
     wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/build/css/style.min.css', array());
 

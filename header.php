@@ -13,8 +13,7 @@
         alert('Browser version is too old and site will not be displayed correctly. Please, upgrade your browser.');
     </script>
     <![endif]-->
-
-    <?php wp_enqueue_script("jquery"); ?>
+    
 
     <?php wp_head(); ?>
 
