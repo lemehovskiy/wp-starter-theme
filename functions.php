@@ -45,4 +45,4 @@ add_theme_support('menus');
 
 
 
-require_once( __DIR__ . '/includes/helpers.php');
+require_once( __DIR__ . '/core/core.php');
