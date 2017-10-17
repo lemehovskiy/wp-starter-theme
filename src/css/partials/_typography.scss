@@ -1,0 +1,26 @@
+body {
+  font-size: 16px;
+  font-family: $theme-font-family-1;
+  color: $theme-text-color;
+}
+
+.theme-main-title {
+  font-family: $theme-font-family-2;
+  line-height: 0.9;
+
+  &.ttl-1 {
+    font-size: 93.3px;
+    letter-spacing: -2.9px;
+  }
+
+  &.ttl-2 {
+    font-size: 70px;
+    letter-spacing: -1.6px;
+  }
+}
+
+.theme-main-paragraph {
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0;
+}
