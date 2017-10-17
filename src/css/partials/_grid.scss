@@ -1,0 +1,30 @@
+$column-count: 12;
+
+@for $i from 1 through $column-count {
+  .col-#{$i} {
+
+    width: 100 / $column-count * $i + %;
+
+  }
+}
+
+
+section {
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  position: relative;
+  padding: 0 20px;
+}
+
+.row {
+  margin: 0 -20px;
+  display: flex;
+
+  .col {
+    padding: 0 20px;
+  }
+}

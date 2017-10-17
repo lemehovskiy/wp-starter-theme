@@ -1,5 +1,7 @@
 body {
   font-size: 16px;
+  font-family: $theme-font-family-1;
+  color: $theme-text-color;
 }
 
 a {
@@ -13,6 +15,7 @@ a {
 
 button {
   transition: color .5s, opacity .5s, background .5s;
+  cursor: pointer;
 }
 
 .back-img {
@@ -32,24 +35,23 @@ button {
   }
 }
 
-section {
-  overflow: hidden;
+.theme-main-title {
+  font-family: $theme-font-family-2;
+  line-height: 0.9;
 
-  &:not(.full-width) {
-    padding: 0 20px;
+  &.ttl-1 {
+    font-size: 93.3px;
+    letter-spacing: -2.9px;
+  }
+
+  &.ttl-2 {
+    font-size: 70px;
+    letter-spacing: -1.6px;
   }
 }
 
-.container {
-  width: 100%;
-  margin: auto;
-}
-
-.row {
-  margin: 0 -10px;
-  display: flex;
-
-  .col {
-    padding: 0 10px;
-  }
+.theme-main-paragraph {
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0;
 }
