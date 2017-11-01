@@ -7,8 +7,6 @@ include('functions/helpers.php');
 
 
 // POST TYPES
-include('post_types/sample.php');
 
 
 // TAXONOMIES
-include('taxonomies/sample.php');
