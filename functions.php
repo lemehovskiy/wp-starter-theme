@@ -9,6 +9,7 @@ add_action( 'wp_enqueue_scripts', function(){
 
 
 function global_scripts() {
+    wp_enqueue_style('fontello', get_stylesheet_directory_uri() . '/fonts/fontello/css/fontello.css', array());
     wp_enqueue_style('main-style', get_stylesheet_directory_uri() . '/build/css/style.min.css', array());
 
     wp_enqueue_script('vendor', get_template_directory_uri() . '/build/js/vendors.min.js', array('jquery'));
