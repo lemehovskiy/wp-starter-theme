@@ -58,4 +58,12 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
+function remove_menus(){
+    remove_menu_page( 'edit.php' ); //Posts
+    remove_menu_page( 'edit-comments.php' ); //Comments
+
+}
+add_action( 'admin_menu', 'remove_menus' );
+
+
 require_once( __DIR__ . '/core/core.php');
