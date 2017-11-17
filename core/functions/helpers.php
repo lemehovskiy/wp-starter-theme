@@ -28,3 +28,31 @@ function my_browser_body_class($classes)
 }
 
 add_filter('body_class', 'my_browser_body_class');
+
+
+function remove_weird_characters($content) {
+    $content = preg_replace('/\x03/', '', $content);
+    return $content;
+}
+
+add_filter('the_content', 'remove_weird_characters');
+add_filter('the_title', 'remove_weird_characters');
+
+
+function acf_remove_weird_characters( $value, $post_id=0, $field=array() ) {
+    if (isset($field['type']) && ($field['type'] == 'repeater' || $field['type'] == 'flexible_content')) {
+        // abort if it's a repeater
+        return $value;
+    }
+    if (!is_array($value)) {
+        $value = preg_replace('/\x03/', '', $value);
+        return $value;
+    }
+    $return = array();
+    foreach ($value as $index => $data) {
+        $return[$index] = my_acf_update_value ($data);
+    }
+    return $return;
+}
+
+add_filter('acf/update_value', 'acf_remove_weird_characters', 10, 3);
