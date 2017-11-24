@@ -50,7 +50,7 @@ function acf_remove_weird_characters( $value, $post_id=0, $field=array() ) {
     }
     $return = array();
     foreach ($value as $index => $data) {
-        $return[$index] = my_acf_update_value ($data);
+        $return[$index] = acf_remove_weird_characters ($data);
     }
     return $return;
 }
