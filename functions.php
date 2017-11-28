@@ -66,4 +66,10 @@ function remove_menus(){
 add_action( 'admin_menu', 'remove_menus' );
 
 
+add_action( 'after_setup_theme', 'wpse_theme_setup' );
+function wpse_theme_setup() {
+    add_theme_support( 'title-tag' );
+}
+
+
 require_once( __DIR__ . '/core/core.php');
