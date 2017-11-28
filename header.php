@@ -6,7 +6,7 @@
 
     <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 
-    <link rel="shortcut icon" href="<?php bloginfo('stylesheet_directory'); ?>/imgs/favicon.png" type="image/png"/>
+    <link rel="shortcut icon" href="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/imgs/favicon.png" type="image/png"/>
 
     <!--[if lte IE 9 ]>
     <script>
