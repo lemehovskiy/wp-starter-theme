@@ -6,10 +6,10 @@ function sample_posttype() {
         array(
             'labels' => array(
                 
-                'name' => __( 'Samples' ),
-                'singular_name' => __( 'Sample' ),
-                'add_new_item'  => __( 'New Sample'  ),
-                'view_item'     => __( 'View Sample' )
+                'name' => __('Samples', 'textdomain'),
+                'singular_name' => __('Sample', 'textdomain'),
+                'add_new_item'  => __('New Sample' ,'textdomain'),
+                'view_item'     => __('View Sample', 'textdomain')
             ),
             'public' 	   => true,
             'has_archive'  => true,
