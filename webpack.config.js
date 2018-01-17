@@ -11,7 +11,7 @@ module.exports = {
 
     output: {
         path: __dirname,
-        filename: 'build/bundle.js'
+        filename: 'build/js/bundle.js'
     },
 
 
@@ -19,7 +19,7 @@ module.exports = {
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
-        new ExtractTextPlugin("build/css/styles.css")
+        new ExtractTextPlugin("build/css/style.css")
     ],
 
     module: {
