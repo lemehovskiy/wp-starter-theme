@@ -7,7 +7,7 @@ module.exports = {
 
     watch: NODE_ENV == 'development',
 
-    entry: './src/entry.js',
+    entry: './src/js/entry.es6',
 
     output: {
         path: __dirname,
