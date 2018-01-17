@@ -1,25 +1,3 @@
-@mixin vw-font-size($viewport-width, $font-size, $letter-spacing: null) {
-
-  $vw-context: $viewport-width * 0.01;
-
-  @media (max-width: ($viewport-width * 1px)) {
-    font-size: (($font-size / $vw-context) * 1vw);
-
-    @if ($letter-spacing) {
-      letter-spacing: (($letter-spacing / $vw-context) * 1vw);
-    }
-
-  }
-}
-
-
-@mixin background-opacity($color, $opacity: 0.3) {
-  background: $color;
-  background: rgba($color, $opacity);
-}
-
-
-
 @mixin animate-burger-button {
   border: none;
   background: transparent;
