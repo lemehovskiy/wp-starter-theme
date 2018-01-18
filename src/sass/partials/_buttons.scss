@@ -14,8 +14,14 @@
   display: inline-block;
   letter-spacing: 1.5px;
   transition: .5s;
+  cursor: pointer;
 
-  @media (max-width: 500px) {
-    padding: 17px 20px;
+
+
+  &.main-btn-1 {
+    padding: 29px 50px;
+    font-size: 21px;
+    letter-spacing: 0.6px;
+    color: white;
   }
 }
