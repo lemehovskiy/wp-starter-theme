@@ -1,6 +1,6 @@
 # Edit here - set path to you directory with config.json & fonts
 
-FONT_DIR      ?= ./fonts/fontello
+FONT_DIR      ?= ./src/fonts/fontello
 
 ### Don't edit below ###
 

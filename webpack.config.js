@@ -10,8 +10,8 @@ module.exports = {
     entry: './src/js/entry.es6',
 
     output: {
-        path: __dirname,
-        filename: 'build/js/bundle.js'
+        path: __dirname + '/build',
+        filename: 'bundle.js'
     },
 
 
@@ -19,7 +19,7 @@ module.exports = {
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
-        new ExtractTextPlugin("build/css/style.css")
+        new ExtractTextPlugin("style.css")
     ],
 
     module: {
@@ -37,7 +37,7 @@ module.exports = {
             },
 
             {
-                test: /\.scss$/,
+                test: /\.s?css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
                     use: [
@@ -62,7 +62,13 @@ module.exports = {
                         }
                     ]
                 })
+            },
+
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg|gif)$/,
+                loader: 'url-loader?limit=100000'
             }
+
         ]
     },
 
@@ -73,7 +79,6 @@ module.exports = {
             jquery: "jquery/src/jquery"
         }
     }
-
 
 
 };
