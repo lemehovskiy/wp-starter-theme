@@ -5,7 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 
-    watch: NODE_ENV == 'development',
+    watch: true,
 
     entry: './src/js/entry.es6',
 
@@ -44,7 +44,14 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
-                                sourceMap: true
+                                sourceMap: NODE_ENV == 'development',
+                                minimize: NODE_ENV == 'production'
+                            }
+                        },
+                        {
+                            loader: 'resolve-url-loader',
+                            options: {
+                                sourceMap: NODE_ENV == 'development'
                             }
                         },
                         {
@@ -54,14 +61,19 @@ module.exports = {
                                     autoprefixer({
                                         browsers: ['last 4 version']
                                     })
-                                ]
+                                ],
+                                sourceMap: 'inline'
                             }
                         },
                         {
-                            loader: 'sass-loader'
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: NODE_ENV == 'development'
+                            }
                         }
                     ]
                 })
+
             },
 
             {
@@ -74,11 +86,21 @@ module.exports = {
 
     devtool: NODE_ENV == 'development' ? "source-map" : false,
 
-    resolve: {
-        alias: {
-            jquery: "jquery/src/jquery"
-        }
+
+    externals: {
+        "jquery": "jQuery"
     }
 
-
 };
+
+
+if (NODE_ENV == 'production') {
+
+    module.exports.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    )
+}
