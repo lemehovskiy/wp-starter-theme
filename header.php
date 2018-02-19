@@ -40,7 +40,7 @@
                 wp_nav_menu(array(
                         'menu' => 'Main nav',
                         'container' => '',
-                        'menu_class' => 'nav nav-left navbar-nav'
+                        'menu_class' => 'nav navbar-nav'
                     )
                 );
                 ?>
