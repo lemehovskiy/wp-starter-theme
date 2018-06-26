@@ -7,7 +7,7 @@ module.exports = {
 
     watch: true,
 
-    entry: './src/js/entry.es6',
+    entry: ['babel-polyfill', './src/js/entry.es6'],
 
     output: {
         path: __dirname + '/build',
