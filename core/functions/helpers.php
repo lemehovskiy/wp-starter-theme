@@ -56,3 +56,49 @@ function acf_remove_weird_characters( $value, $post_id=0, $field=array() ) {
 }
 
 add_filter('acf/update_value', 'acf_remove_weird_characters', 10, 3);
+
+function get_total_from_repeater_field($repeater, $repeater_field, $post_id)
+{
+    $arr_helper = array();
+
+    while (have_rows($repeater, $post_id)) : the_row();
+
+        if (get_sub_field($repeater_field)) {
+            $arr_helper[] = get_sub_field($repeater_field);
+        }
+
+    endwhile;
+
+    return array_sum($arr_helper);
+
+}
+
+function get_lowest_value_from_repeater_field($repeater, $repeater_field, $post_id)
+{
+    $arr_helper = array();
+
+    while (have_rows($repeater, $post_id)) : the_row();
+        if (get_sub_field($repeater_field)) {
+            $arr_helper[] = get_sub_field($repeater_field);
+        }
+
+    endwhile;
+
+    return min($arr_helper);
+
+}
+
+function get_highest_value_from_repeater_field($repeater, $repeater_field, $post_id)
+{
+    $arr_helper = array();
+
+    while (have_rows($repeater, $post_id)) : the_row();
+        if (get_sub_field($repeater_field)) {
+            $arr_helper[] = get_sub_field($repeater_field);
+        }
+
+    endwhile;
+
+    return max($arr_helper);
+
+}
