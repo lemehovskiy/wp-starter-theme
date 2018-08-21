@@ -19,7 +19,10 @@ module.exports = {
         new webpack.DefinePlugin({
             NODE_ENV: JSON.stringify(NODE_ENV)
         }),
-        new ExtractTextPlugin("style.css")
+        new ExtractTextPlugin("style.css"),
+        new webpack.ProvidePlugin({
+            Promise: 'es6-promise-promise'
+        })
     ],
 
     module: {
