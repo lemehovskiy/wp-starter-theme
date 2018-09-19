@@ -45,6 +45,7 @@ table {
 textarea, input, button {
   background: transparent;
   border: none;
+  margin: 0;
 
   &:focus {
     outline: none;
