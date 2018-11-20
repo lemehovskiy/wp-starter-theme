@@ -1,4 +1,5 @@
 <?php
+add_image_size('full_hd', 1920, 1080);
 
 add_action( 'wp_enqueue_scripts', function(){
     if (is_admin()) return; // don't dequeue on the backend
