@@ -40,6 +40,13 @@ module.exports = {
             },
 
             {
+                enforce: "pre",
+                test: /\.es6$/,
+                exclude: /node_modules/,
+                loader: "eslint-loader"
+            },
+
+            {
                 test: /\.s?css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
