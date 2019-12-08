@@ -21,6 +21,7 @@
     "jest": "^24.9.0",
     "legacy-loader": "0.0.2",
     "node-sass": "^4.7.2",
+    "plop": "^2.5.3",
     "postcss-loader": "^2.0.9",
     "resolve-url-loader": "^2.2.1",
     "sass-loader": "^6.0.6",
@@ -29,6 +30,7 @@
     "webpack": "^3.6.0"
   },
   "scripts": {
+    "plop": "plop",
     "test": "jest --watch",
     "dev": "NODE_ENV=development webpack",
     "build": "NODE_ENV=production webpack"
