@@ -3,7 +3,7 @@ $column-count: 12;
 @for $i from 1 through $column-count {
   .col-#{$i} {
 
-    width: 100 / $column-count * $i + %;
+    width: 100 / $column-count * $i * 1%;
 
   }
 }
