@@ -1,4 +1,4 @@
-## Fontello scripts
+# Fontello scripts
 
 ### open
 
@@ -12,8 +12,7 @@ make -f fontello
 make -f fontello fontsave
 ```
 
-
-##PLOP Micro-generator framework
+## PLOP Micro-generator framework
 
 ### Init builder
 
