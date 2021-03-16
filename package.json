@@ -1,5 +1,5 @@
 {
-  "name": "Starter-theme",
+  "name": "starter-theme",
   "version": "1.0.0",
   "description": "Starter theme",
   "main": "src/js/entry.es6",
@@ -8,26 +8,28 @@
     "url": "https://github.com/lemehovskiy/wp-starter-theme"
   },
   "devDependencies": {
-    "autoprefixer": "^7.2.3",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "@babel/preset-env": "^7.13.10",
+    "autoprefixer": "^10.2.5",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "css-loader": "^0.28.7",
+    "css-loader": "^5.1.3",
     "es6-promise-promise": "^1.0.0",
-    "eslint": "^5.12.0",
-    "eslint-loader": "^2.1.1",
-    "extract-text-webpack-plugin": "^3.0.2",
-    "jest": "^24.9.0",
-    "legacy-loader": "0.0.2",
-    "node-sass": "^4.7.2",
-    "plop": "^2.5.3",
-    "postcss-loader": "^2.0.9",
-    "resolve-url-loader": "^2.2.1",
-    "sass-loader": "^6.0.6",
-    "style-loader": "^0.19.1",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.6.0"
+    "eslint": "^7.22.0",
+    "eslint-webpack-plugin": "^2.5.2",
+    "jest": "^26.6.3",
+    "legacy-loader": "^0.0.2",
+    "mini-css-extract-plugin": "^1.3.9",
+    "node-sass": "^5.0.0",
+    "plop": "^2.7.4",
+    "postcss": "^8.2.8",
+    "postcss-loader": "^5.2.0",
+    "resolve-url-loader": "^3.1.2",
+    "sass-loader": "^11.0.1",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.26.0",
+    "webpack-cli": "^4.5.0"
   },
   "scripts": {
     "plop": "plop",
@@ -35,6 +37,12 @@
     "dev": "NODE_ENV=development webpack",
     "build": "NODE_ENV=production webpack"
   },
+  "browserslist": [
+    "last 4 chrome version",
+    "last 4 firefox version",
+    "last 4 safari version",
+    "last 1 ie version"
+  ],
   "keywords": [
     "wordpress theme starter"
   ],
